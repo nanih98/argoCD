@@ -21,7 +21,7 @@ spec:
       labels:
         app: nginx
     spec:
-      terminationGracePeriodSeconds: 30
+      terminationGracePeriodSeconds: 50
       containers:
       - image: nginx:latest
         name: nginx
