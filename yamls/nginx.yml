@@ -1,20 +1,10 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: nginx
-  #annotations:
-  #  linkerd.io/inject: enabled
-  labels: 
-    Environment: "Development"
-    #istio-injection: enabled
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     app: nginx
   name: nginx
-  namespace: nginx
+  namespace: default
 spec:
   replicas: 1
   strategy:
@@ -55,7 +45,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: nginx
-  namespace: nginx
+  namespace: default
 spec:
   selector:
     app: nginx
